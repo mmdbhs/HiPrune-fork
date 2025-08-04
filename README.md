@@ -1,6 +1,7 @@
 # HiPrune: Training-Free Visual Token Pruning via Hierarchical Attention in Vision-Language Models
 [![Paper Link](https://img.shields.io/badge/Paper-Arxiv-red)](https://arxiv.org/abs/2508.00553)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Paper Link](https://img.shields.io/badge/Paper-Github-green)](assets/HiPrune__Training_Free_Visual_Token_Pruning_via_Hierarchical_Attention_in_Vision_Language_Models.pdf)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
 ## Abstract
 Vision-Language Models (VLMs) encode images into lengthy sequences of visual tokens, leading to excessive computational overhead and limited inference efficiency. While prior efforts prune or merge tokens to address this issue, they often rely on special tokens (e.g., CLS) or require task-specific training, hindering scalability across architectures. In this paper, we propose **HiPrune**, a training-free and model-agnostic token **Prun**ing framework that exploits the **Hi**erarchical attention structure within vision encoders. We identify that middle layers attend to object-centric regions, while deep layers capture global contextual features. Based on this observation, HiPrune selects three types of informative tokens: (1) Anchor tokens with high attention in object-centric layers, (2) Buffer tokens adjacent to anchors for spatial continuity, and (3) Register tokens with strong attention in deep layers for global summarization. Our method requires no retraining and integrates seamlessly with any ViT-based VLM. Extensive experiments on LLaVA-1.5, LLaVA-NeXT, and Qwen2.5-VL demonstrate that HiPrune achieves state-of-the-art pruning performance, preserving up to **99.3%** task accuracy with only **33.3%** tokens, and maintaining **99.5%** accuracy with just **11.1%** tokens. Meanwhile, it reduces inference FLOPs and latency by up to **9**$\times$, showcasing strong generalization across models and tasks.
@@ -88,4 +89,16 @@ If you want to change hyperparameters, you can simply set environment variables 
 |   |HIPRUNE_OBJECT_LAYER|1-24|$l$|16|Object layer to choose anchor and buffer tokens|
 
 ## Acknowledgement
-This repository is built on [LLaVA](https://github.com/haotian-liu/LLaVA), [FasterVLM](https://github.com/Theia-4869/FasterVLM), [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval). Acknowledge for their outstanding work!
+
+This repository is built on [LLaVA](https://github.com/haotian-liu/LLaVA), [FasterVLM](https://github.com/Theia-4869/FasterVLM), [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval). Acknowledge their outstanding work!
+
+## Citation
+If you found our work helpful, please consider leaving a star ⭐ and citing our work.
+```
+@article{liu2025hi,
+  title={HiPrune: Training-Free Visual Token Pruning via Hierarchical Attention in Vision-Language Models},
+  author={Jizhihui Liu, Feiyi Du, Guangdao Zhu, Niu Lian, Jun Li, Bin Chen},
+  journal={arXiv preprint arXiv:2508.00553},
+  year={2025}
+}
+```
