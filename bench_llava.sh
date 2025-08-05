@@ -7,7 +7,7 @@ export HIPRUNE_OBJECT_LAYER=9
 
 ckpt=liuhaotian/llava-v1.5-7b
 
-#The following benchmarks are obtained with lmm_eval: gqa,mme,pope,scienceqa_img,vizwiz_vqa_val
+#The following benchmarks are obtained with lmm_eval: gqa, mme, pope, scienceqa_img, vizwiz_vqa_val
 tasks=("scienceqa_img" "vizwiz_vqa_val")
 for task in "${tasks[@]}"; do
     accelerate launch --num_processes=1 -m lmms_eval --model llava \
