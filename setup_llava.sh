@@ -2,6 +2,8 @@ conda create -n HiPrune python=3.12 -y
 conda activate HiPrune
 cd lmms-eval
 pip install av==14.4.0
+pip install sentencepiece
+pip install loguru
 pip install --no-deps -U -e .
 cd ../LLaVA
 pip install --no-deps -U -e .
