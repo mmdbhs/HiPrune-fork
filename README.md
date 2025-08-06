@@ -1,7 +1,10 @@
 # HiPrune: Training-Free Visual Token Pruning via Hierarchical Attention in Vision-Language Models
 [![Paper Link](https://img.shields.io/badge/Paper-Arxiv-red)](https://arxiv.org/abs/2508.00553)
-[![Paper Link](https://img.shields.io/badge/Paper-Github-green)](assets/HiPrune__Training_Free_Visual_Token_Pruning_via_Hierarchical_Attention_in_Vision_Language_Models.pdf)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+
+## News
+- **[2025/8/7]** We have released notebooks for producing visualizations in our paper.
+- **[2025/8/4]** We have released our paper and code for LLaVA-1.5, LLaVA-NeXT, Qwen2.5-VL.
 
 ## Abstract
 Vision-Language Models (VLMs) encode images into lengthy sequences of visual tokens, leading to excessive computational overhead and limited inference efficiency. While prior efforts prune or merge tokens to address this issue, they often rely on special tokens (e.g., CLS) or require task-specific training, hindering scalability across architectures. In this paper, we propose **HiPrune**, a training-free and model-agnostic token **Prun**ing framework that exploits the **Hi**erarchical attention structure within vision encoders. We identify that middle layers attend to object-centric regions, while deep layers capture global contextual features. Based on this observation, HiPrune selects three types of informative tokens: (1) Anchor tokens with high attention in object-centric layers, (2) Buffer tokens adjacent to anchors for spatial continuity, and (3) Register tokens with strong attention in deep layers for global summarization. Our method requires no retraining and integrates seamlessly with any ViT-based VLM. Extensive experiments on LLaVA-1.5, LLaVA-NeXT, and Qwen2.5-VL demonstrate that HiPrune achieves state-of-the-art pruning performance, preserving up to **99.3%** task accuracy with only **33.3%** tokens, and maintaining **99.5%** accuracy with just **11.1%** tokens. Meanwhile, it reduces inference FLOPs and latency by up to **9**$\times$, showcasing strong generalization across models and tasks.
@@ -51,6 +54,12 @@ Before starting evaluation on LLaVA-1.5, please follow its [official instruction
 bash bench_llava.sh
 ```
 
+## Evaluation on LLaVA-NeXT
+- Accuracy results
+```bash
+bash bench_llava_next.sh
+```
+
 - Efficiency results
 ```bash
 python bench_sys.py
@@ -60,13 +69,6 @@ python bench_sys.py
 ```bash
 bash flops.py
 ```
-
-## Evaluation on LLaVA-NeXT
-- Accuracy results
-```bash
-bash bench_llava_next.sh
-```
-
 
 ## Evaluation on Qwen2.5-VL
 - Accuracy results
