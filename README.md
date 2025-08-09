@@ -80,15 +80,15 @@ bash bench_qwen.sh
 If you want to change hyperparameters, you can simply set environment variables in this table.
 |Model|Environment Variables|Range|Default|Denote|Description|
 |---|---|---|---|---|---|
-|LLaVA-1.5|HIPRUNE_RETENTION|1-576|-|$N'$|Token budget|
+|LLaVA-1.5|HIPRUNE_RETENTION|1-576|192/128/64|$N'$|Token budget|
 |   |HIPRUNE_ALPHA|0-1|0.1|$\alpha$|Proportation of anchor and buffer tokens|
 |   |HIPRUNE_OBJECT_LAYER|1-24|9|$l$|Object layer to choose anchor and buffer tokens|
-|LLaVA-NeXT|HIPRUNE_RETENTION|1-2880|-|$N'$|Token budget|
+|LLaVA-NeXT|HIPRUNE_RETENTION|1-2880|640/320/160|$N'$|Token budget|
 |   |HIPRUNE_ALPHA|0-1|0.1|$\alpha$|Proportation of anchor and buffer tokens|
 |   |HIPRUNE_OBJECT_LAYER|1-24|9|$l$|Object layer to choose anchor and buffer tokens|
-|Qwen2.5-VL|HIPRUNE_QWEN_RETENTION|0-1|-|$\frac{N'}{N}$|Token retention ratio|
-|   |HIPRUNE_ALPHA|0-1|$\alpha$|0.1|Proportation of anchor and buffer tokens|
-|   |HIPRUNE_OBJECT_LAYER|1-24|$l$|16|Object layer to choose anchor and buffer tokens|
+|Qwen2.5-VL|HIPRUNE_QWEN_RETENTION|0-1|0.334/0.223/0.112|$\frac{N'}{N}$|Token retention ratio|
+|   |HIPRUNE_ALPHA|0-1|0.1|$\alpha$|Proportation of anchor and buffer tokens|
+|   |HIPRUNE_OBJECT_LAYER|1-24|16|$l$|Object layer to choose anchor and buffer tokens|
 
 ## Acknowledgement
 
@@ -104,3 +104,4 @@ If you found our work helpful, please consider leaving a star ⭐ and citing our
   year={2025}
 }
 ```
+
