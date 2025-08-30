@@ -8,5 +8,5 @@ pip install openpyxl==3.1.5 qwen_vl_utils
 # Before evaluating Qwen, you should first upgrade transformers and accelerate
 
 pip3 install qwen_vl_utils
-pip install -U transformers accelerate
+pip install transformers==4.52.0 accelerate
 pip install flash_attn # FlashAttention is required
