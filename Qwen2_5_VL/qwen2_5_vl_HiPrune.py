@@ -574,6 +574,7 @@ class Qwen2_5_VisionTransformerPretrainedModel(Qwen2_5_VLPreTrainedModel):
                     attn_weights = attn_weights.sum(dim=0) 
                     attn_weights = attn_weights.view(attn_weights.shape[0]//4, -1).mean(dim=-1)
                     attn_weights = attn_weights[reverse_indices]
+                    attn_weights = F.softmax(attn_weights)
                 attn_list.append(attn_weights)
         hidden_states = self.merger(hidden_states)
         hidden_states = hidden_states[reverse_indices, :]
